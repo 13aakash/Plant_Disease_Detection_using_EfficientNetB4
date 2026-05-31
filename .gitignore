@@ -1,0 +1,9 @@
+*.pth
+*.zip
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+
+# Kaggle / Colab
+/content/
+/kaggle/working/
