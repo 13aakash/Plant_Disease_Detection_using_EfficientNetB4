@@ -69,23 +69,26 @@ visually similar diseases.
 ---
 
 ## 🏛️ Architecture
+
+```text
 Leaf Image (380×380)
-↓
+        ↓
 EfficientNet-B4 Backbone
-Blocks 0-5: Frozen (ImageNet features)
-Blocks 6-7: Unfrozen (domain adaptation)
-↓
+Blocks 0–5: Frozen (ImageNet features)
+Blocks 6–7: Unfrozen (domain adaptation)
+        ↓
 1792-dim feature vector
-↓
+        ↓
 Dropout(0.4)
-↓
+        ↓
 Linear(1792 → 512) + GELU
-↓
+        ↓
 Dropout(0.3)
-↓
+        ↓
 Linear(512 → 38)
-↓
+        ↓
 38-class prediction
+```
 
 ---
 
@@ -102,17 +105,12 @@ Linear(512 → 38)
 ## 🚀 How to Run
 
 ### On Kaggle (Recommended)
-1. Open `notebook_kaggle.ipynb`
+1. Open `crop-disease-classification.ipynb`
 2. Add dataset: search `mohitsingh1804/plantvillage` in the Data panel
 3. Enable GPU T4 x2 accelerator
 4. Enable Internet in Settings
-5. Run all cells in order
+5. Click "Save Version" at top right
 
-### On Google Colab
-1. Open `notebook_colab.ipynb`
-2. Enable GPU: Runtime → Change runtime type → T4 GPU
-3. Run Cell 1 and upload `kaggle.json` when prompted
-4. Run all cells in order
 
 ---
 
@@ -157,7 +155,7 @@ pip install -r requirements.txt
 ---
 
 ## 🔮 Future Improvements
-
+- The images of this dataset are taken in a controlled lab environment. Fine-tune on real field images for robust deployment in real-world agricultural   environments
 - Test on real farm images (not controlled lab backgrounds)
 - Add GradCAM visualizations showing which leaf regions the model focuses on
 - Deploy as mobile app for field use
